@@ -1,0 +1,50 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "layout.cshtml";
+}
+
+<div class="container">
+	<div class="w-100 row align-items-start g-4 f1-news container">
+		<!-- Feature Story -->
+		@{
+			IPublishedContent featuredStory = Model.Value<IPublishedContent>("featuredStory");
+			if (featuredStory != null) {
+				<a class="f1-feature-story col-12 col-md-6 nav-link" href="@featuredStory.Url()">
+					<h6 class="f1-feature-text">FEATURE</h6>
+					<h1>@featuredStory.Value("title")</h1>
+					@{
+						var featuredImage = featuredStory.Value<IPublishedContent>("thumbnailImage");
+					}
+					<img  class="w-100" src="@featuredImage.Url()" />
+				</a>
+			}
+		}
+
+		<!-- Recent Stories-->
+		<div class="f1-recent-story col container">
+			<div class="grid-cols-2 ">
+
+				@{
+					var selection = Umbraco.Content(Guid.Parse("bd78d1b7-5fd7-4dc0-aaed-c184ef7ab21d"))
+					.ChildrenOfType("newsStory")
+					.Where(x => x.IsVisible())
+					.OrderByDescending(x => x.CreateDate);
+
+					var sel = selection.Take(6);
+				}
+				@foreach (var item in sel)
+				{
+					
+					var image = item.Value<IPublishedContent>("thumbnailImage");
+					
+					<a class="f1-story col nav-link" href="@item.Url()">
+						<img class="w-100" src="@image.Url()" />
+						<h6 class="f1-feature-text p-1">FEATURE</h6>
+						<p>@item.Value("title")</p>
+					</a>
+				}
+			</div>
+		</div>
+	</div>
+</div>

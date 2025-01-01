@@ -1,0 +1,31 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<html lang="en">
+	<head>
+		<title>@Model.Value("pageTitle")</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+	</head>
+	<body>
+		@await Html.PartialAsync("Navbar")
+		
+
+	<!-- MAIN PAGE CONTENT -->
+	<section class="main-page-content">
+		@RenderBody()
+	</section>
+
+		<!-- FOOTER -->
+	<footer>
+		@await Html.PartialAsync("Footer")
+
+		<script src="/js/jquery-3.7.1.min.js"></script>
+		<script src="~/js/bootstrap.min.js"></script>
+	</footer>
+
+	</body>
+</html>

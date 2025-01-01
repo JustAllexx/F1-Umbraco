@@ -1,0 +1,99 @@
+﻿* {
+    /* What is the border box model? */
+    box-sizing: border-box !important;
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main-page-content {
+    min-height: 500px;
+    flex: auto;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.main-nav {
+    background-color: #e10600;
+    height: 64px;
+}
+
+.main-nav-item {
+    color: white;
+    min-width: 10rem;
+}
+
+.main-nav-item a {
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.main-nav-item a:hover {
+    background-color: #15151e;
+}
+
+.main-nav-text {
+    align-self: center;
+    width: 100%;
+}
+
+.f1-apps {
+    background-color: #38383f;
+    color: white;
+    align-content: center;
+    padding-left: .625rem;
+    padding-right: .625rem;
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.f1-app-container {
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.f1-sponsors {
+    background-color: #15151e;
+    padding-top: 1rem;
+    padding-bottom:2.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.f1-extra-links {
+    background-color: #15151e;
+}
+
+.f1-news {
+    gap: 1.25rem;
+}
+
+.socials-image {
+    filter: invert(1);
+}
+
+.f1-story {
+    padding: 0.5rem;
+    border: 0.5rem;
+    margin: 0.5rem;
+}
+
+.f1-feature-text {
+    color: red;
+}
+
+/*Copied directly from tailwind*/
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+}

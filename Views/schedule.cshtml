@@ -1,0 +1,44 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using F1_site.Controllers;
+@using F1_site.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "layout.cshtml";
+}
+
+<div class="container">
+	<div class="schedule-header pt-4">
+		<h1 class="fw-bolder display-1 m-0">F1 Schedule 2025</h1>
+		<p>2025 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR</p>
+	</div>
+
+	<section class="calendar-container calendar">
+		<div class="grid-cols-4 gap-5">
+			@{
+				ScheduleController scheduleController = new ();
+				var races = scheduleController.getRaces();
+				int i = 1;
+			}
+
+			@foreach(CalendarRace race in races)
+			{
+				<div class="race-tablet">
+					<p>Round @i</p>
+					@{
+						i+= 1;
+					}
+					<div class="race-date">
+						<p class="display-5 mb-0">@race.days</p>
+						<p class="display-5 mb-0">@race.month</p>
+					</div>
+					<div class="race-title">
+						<p class="display-5 mb-0">@race.place</p>
+						<p>@race.name</p>
+					</div>
+					<img class="w-100 rounded-3" src="/media/images/race-weekend.png" />
+				</div>
+			}
+
+		</div>
+	</section>
+</div>

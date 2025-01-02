@@ -18,6 +18,7 @@
 				ScheduleController scheduleController = new ();
 				var races = scheduleController.getRaces();
 				int i = 1;
+				scheduleController.Dispose();
 			}
 
 			@foreach(CalendarRace race in races)

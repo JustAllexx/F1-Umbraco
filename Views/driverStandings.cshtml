@@ -1,5 +1,37 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using F1_site.Controllers;
+@using F1_site.Models;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "layout.cshtml";
 }
+
+<section class="driver-standings container">
+	<div class="grid-cols-4 gap-5">
+		@{
+			ScheduleController scheduleController = new();
+			//Gets the drivers (sorted for there number of points)
+			var drivers = scheduleController.GetDrivers();
+			int i = 1;
+			scheduleController.Dispose();
+		}
+
+		@foreach(F1Driver driver in drivers) {
+			<div class="driver-tablet">
+				<div class="place-points">
+					<p>@i</p>
+					<p>@driver.DriverPoints</p>
+				</div>
+				<div class="driver-name">
+					<p>@driver.DriverName</p>
+				</div>
+				<p>@driver.DriverTeam</p>
+				<div class="driver-number">
+					<p>@driver.DriverNumber</p>
+				</div>
+			</div>
+
+			i += 1;
+		}
+	</div>
+</section>

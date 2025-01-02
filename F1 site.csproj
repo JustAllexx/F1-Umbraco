@@ -11,6 +11,7 @@
     <Content Include="wwwroot\media\images\f1_logo.png" />
     <Content Include="wwwroot\media\images\Features\lando-1.jpg" />
     <Content Include="wwwroot\media\images\google-play-badge.png" />
+    <Content Include="wwwroot\media\images\race-weekend.png" />
     <Content Include="wwwroot\media\images\socials\facebook.png" />
     <Content Include="wwwroot\media\images\socials\instagram.png" />
     <Content Include="wwwroot\media\images\socials\x.png" />
@@ -33,10 +34,6 @@
     <None Include="wwwroot\media\images\socials\instagram.webp" />
     <None Include="wwwroot\media\images\socials\x.webp" />
     <None Include="wwwroot\media\images\socials\youtube.webp" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
   </ItemGroup>
 
   <PropertyGroup>

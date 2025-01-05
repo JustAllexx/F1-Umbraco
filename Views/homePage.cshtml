@@ -1,4 +1,5 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
 	Layout = "layout.cshtml";
@@ -44,6 +45,31 @@
 						<p>@item.Value("title")</p>
 					</a>
 				}
+			</div>
+		</div>
+	</div>
+
+	<!-- Video Section of the website-->
+	<div class="video-container container rounded-5 mt-3 mb-3">
+		@{
+			MediaWithCrops mediaWithCrops = Model.Value<MediaWithCrops>("featuredVideo");
+		}
+		<div class="screen-cover top-0 left-0 position-fixed justify-content-center" style="display:none !important">
+			<button class="btn position-absolute fw-bolder btn-outline-light f1-close">X</button>
+			<video class="f1-video mx-auto position-fixed" controls>
+				<source type="audio/mp4" src="@mediaWithCrops.Url()" />
+			</video>
+		</div>
+
+		<div class="video-grid grid-cols-2">
+			<div class="p-5">
+				<p class="display-4 fw-bolder">@Model.Value("featureVideoTitle")</p>
+				<p class="display-6 fw-light">@Model.Value("featureVideoDescription")</p>
+				<button class="btn f1-button video-button">Watch Now!</button>
+			</div>
+
+			<div>
+				
 			</div>
 		</div>
 	</div>

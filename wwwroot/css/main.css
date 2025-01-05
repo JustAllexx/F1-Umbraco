@@ -102,3 +102,40 @@ body {
     display: grid;
     grid-template-columns: repeat(4,minmax(0,1fr));
 }
+/* ---------------------------------   */
+
+.video-container {
+    background-color: #663399;
+    color: white;
+}
+
+.f1-video {
+    width: 75vw;
+    top: 5rem;
+    object-fit: cover;
+}
+
+.f1-button {
+    background-color: white;
+}
+
+.f1-close {
+    top: 5%;
+    right: 5%;
+    position: absolute;
+    color: white;
+}
+
+.f1-button:hover {
+    background-color: #47236b
+}
+
+.screen-cover {
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    display: flex;
+    pointer-events: all;
+    background-color: rgba(21, 21, 28, 0.8);
+    z-index: 9999
+}

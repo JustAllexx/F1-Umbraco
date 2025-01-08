@@ -6,6 +6,9 @@
 
     $(".f1-close").on("click", function () {
         $("body").css("overflow", "auto");
-        $(this).closest(".screen-cover").toggle();
+        var screenCover = $(this).closest(".screen-cover");
+        screenCover.toggle();
+        var video = screenCover.find(".f1-video");
+        video.trigger("pause");
     });
 })

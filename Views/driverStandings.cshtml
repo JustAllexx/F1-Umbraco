@@ -24,16 +24,16 @@
 		@foreach(F1Driver driver in drivers) {
 			<div class="driver-tablet border-5 border-top border-end p-3">
 				<div class="place-points d-flex justify-content-between">
-					<p>@i</p>
-					<p>@driver.DriverPoints</p>
+					<p class="mb-0 display-3 fw-bolder">@i</p>
+					<p class="mb-0 display-6">@driver.DriverPoints</p>
 				</div>
 				<div class="driver-name">
-					<p>@driver.DriverName</p>
+					<p class="mb-0 fw-bolder">@driver.DriverName</p>
 				</div>
-				<p>@driver.DriverTeam</p>
+				<p class="mb-0 fw-lighter">@driver.DriverTeam</p>
 				<div class="driver-number d-flex justify-content-between align-bottom">
-					<p class="display-1 fw-bolder">@driver.DriverNumber</p>
-					<img class="w-75" src="/media/images/Drivers/@{@driver.DriverNumber}.png" />
+					<p class="display-1 fw-bolder w-25">@driver.DriverNumber</p>
+					<img class="w-75" src="/media/images/Drivers/default.png" />
 				</div>
 			</div>
 
